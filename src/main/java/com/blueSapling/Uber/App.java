@@ -75,7 +75,8 @@ public class App
 
 		return stmt;
 	}
-
+	
+	//returns a driver according to customer type
 	static Driver getDriver(Statement stmt, int userType) throws SQLException {
 		ResultSet rs = null;
 		switch(userType) {
@@ -113,6 +114,7 @@ public class App
 		return driver;
 	}
 
+	//calculates and returns fare according to ride details
 	static double calculateFare(double distance, double travel_time, double surge, double waiting_time, String ride_cancelled){
 		double fare = 0.0;
 		if(ride_cancelled.equals("Y")) {
@@ -129,6 +131,7 @@ public class App
 		return fare;
 	}
 
+	//Updates driver details(rating, number of rides, and whether driver would be remain employed or not) after the current ride
 	static void updateDriver(Statement stmt, double rate, int rides, double rating, int Vehicle_No) throws SQLException{
 		rate = (rides*rating + rate)/(rides+1);
 		rides++;
@@ -147,7 +150,7 @@ public class App
 			Scanner sc = new Scanner(System.in);
 			int userType = sc.nextInt();
 
-			//Fetching Driver details
+			//Finding suitable driver for the current customer
 			Driver driver = App.getDriver(stmt, userType);
 
 			if(driver != null) {
