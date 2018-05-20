@@ -1,4 +1,4 @@
-Welcome to the Uber wiki!
+Welcome to the Uber!
 
 ### Console
 ![Console](https://github.com/sushil4u2/Uber/blob/master/resourses/images/console.png)
