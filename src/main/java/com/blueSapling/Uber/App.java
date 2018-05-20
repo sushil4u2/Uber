@@ -84,7 +84,7 @@ public class App
 			break;
 		}
 		case 2:{
-			rs = stmt.executeQuery("select * from Driver where Rating between 4.5 and 4.8 and Available = true and Employed = true order by rand() limit 1");
+			rs = stmt.executeQuery("select * from Driver where Rating between 4.5 and 4.7 and Available = true and Employed = true order by rand() limit 1");
 			break;
 		}
 		case 3:{
